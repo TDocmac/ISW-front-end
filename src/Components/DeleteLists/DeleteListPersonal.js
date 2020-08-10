@@ -60,6 +60,7 @@ class DeleteListPersonal extends Component{
         .then((response)=>{
             // console.log('RESPUESTA GET ALL PACIENTES:');
             console.log(ID);
+            console.log(response);
         })
         .catch(function (error) {
             console.log(error);

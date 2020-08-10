@@ -12,6 +12,7 @@ function create (data){
     return api.post(`${basePath}`,data)
 };
 function remove (personalId){
+    console.log(personalId);
     return api.delete(`${basePath}/id=${personalId}`)
 }
 
