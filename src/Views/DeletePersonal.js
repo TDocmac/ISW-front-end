@@ -1,5 +1,5 @@
 import React from 'react';
-
+import DeleteListPersonal from '../Components/DeleteLists/DeleteListPersonal';
 import { Container,Row,Col } from 'react-bootstrap'
 
 function DeletePersonal(){
@@ -7,7 +7,7 @@ function DeletePersonal(){
     return (
         <Container fluid="md" >
             <Row>
-                <Col><PersonnelList/></Col>
+                <Col><DeleteListPersonal/></Col>
             </Row>
         </Container>
     );

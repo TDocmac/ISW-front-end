@@ -106,3 +106,5 @@ class DeleteListPersonal extends component{
         )
     }
 }
+
+export default DeleteListPersonal;
