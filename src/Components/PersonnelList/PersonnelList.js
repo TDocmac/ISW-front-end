@@ -87,7 +87,7 @@ class personnelList extends Component{
             return(
             <ListGroup.Item className='border' key={personnel.id}>
             <p><strong>Personal: </strong>{personnel.nombre} </p>
-            <p><strong>Edad: </strong>{edad}</p>
+            <p><strong>Edad: </strong>{personnel.edad}</p>
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
             </ListGroup.Item>
             )
