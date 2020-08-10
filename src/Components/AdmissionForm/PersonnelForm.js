@@ -35,13 +35,13 @@ class PersonnelForm extends Component{
                 nombre: this.state.personnelName,
                 rut: this.state.personnelRut,
                 edad:this.state.personnelAge,
-                fechaNacimiento: this.state.personnelBirth,
+                fechaDeNacimiento: this.state.personnelBirth,
                 direccion: this.state.personnelAddress,
                 telefono: this.state.personnelNumber,
                 //fechaCreacion: date,
                 especialidad: this.state.personnelEspecialidad,
                 turnos: this.state.personnelShifts,
-                password: this.state.personnelPassword,
+                pass: this.state.personnelPassword,
                 cargo: this.state.personnelCargo
             }
             console.log(data)
