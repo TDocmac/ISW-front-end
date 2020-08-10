@@ -169,6 +169,12 @@ class PersonnelForm extends Component{
                     <Form.Label>Direccion del personal:</Form.Label>
                     <Form.Control type="text"  onChange={this.AddressChangeHandler} />
                 </Form.Group>
+            
+                <Form.Group controlId="FormNumber" >
+                    <Form.Label>Numero de telefono del personal:</Form.Label>
+                    <Form.Control type="text"  onChange={this.NumberChangeHandler} />
+                </Form.Group>
+            
 
                 <Form.Group controlId="FormEspecialidad" >
                     <Form.Label>Especialidad del personal:</Form.Label>
