@@ -1,5 +1,4 @@
 import {api} from '../helpers/api'
-
 const basePath= 'api';
 
 function getAll (){
