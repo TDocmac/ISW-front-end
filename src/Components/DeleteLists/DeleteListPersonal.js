@@ -90,6 +90,8 @@ class DeleteListPersonal extends Component{
             <p><strong>Edad: </strong>{edad}</p>
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
             </ListGroup.Item>
+
+            
             )
             });
         }
