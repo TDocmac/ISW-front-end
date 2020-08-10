@@ -8,6 +8,7 @@ import './App.css';
 import Admission from './Views/Admission'
 import PersonnelAdmission from './Views/PersonnelAdmission'
 import PersonnelListView from './Views/PersonnelListView'
+import DeletePersonal from './Views/DeletePersonal'
 
 import SillonAdmission from './Views/SillonAdmission'
 import SillonesListView from './Views/SillonesListView';
@@ -32,6 +33,10 @@ function App() {
         exact
         path='/personal'
         component={PersonnelListView}/>
+        <Route
+        exact
+        path='/deleteP'
+        component={DeletePersonal}/>
         <Route
         exact
         path='/admissionS'
