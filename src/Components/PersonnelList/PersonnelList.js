@@ -27,7 +27,7 @@ class personnelList extends Component{
         personnelService.getAll()
         .then((response)=>{
             // console.log('RESPUESTA GET ALL PACIENTES:');
-            // console.log(response.data);
+            console.log(response.data);
             this.setState({
                 ...this.state,
                 personnels:response.data
@@ -42,7 +42,7 @@ class personnelList extends Component{
         personnelService.getAll()
         .then((response)=>{
             // console.log('RESPUESTA GET ALL PACIENTES:');
-            // console.log(response.data);
+            console.log(response.data);
             this.setState({
                 ...this.state,
                 personnels:response.data
