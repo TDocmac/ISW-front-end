@@ -56,7 +56,14 @@ class DeleteListPersonal extends Component{
     };
 
     deleteByID=(ID)=>{
-        personnelService.remove(ID);
+        personnelService.remove(ID)
+        .then((response)=>{
+            // console.log('RESPUESTA GET ALL PACIENTES:');
+            console.log(ID);
+        })
+        .catch(function (error) {
+            console.log(error);
+          });
     }
 
     render(){
