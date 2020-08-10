@@ -3,7 +3,7 @@ import {api} from '../helpers/api'
 const basePath= 'v1';
 
 function getAll (){
-    return api.get(`${basePath}/sala`)
+    return api.get(`${basePath}/salas`)
 };
 function show (salaId){
     return api.get(`${basePath}/id=${salaId}`)
