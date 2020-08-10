@@ -29,10 +29,10 @@ class SillonForm extends Component{
                 //fechaCreacion: date,
             }
             console.log(data)
+            alert("Sillón ingresado");
             sillonService.create(data)
             .then((response)=>console.log(response.data))
             .catch(error=> console.log(error));
-            alert("Sillón ingresado");
         }
         else alert('rellene todos los campos');
     };

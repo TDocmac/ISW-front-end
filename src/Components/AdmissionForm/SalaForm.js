@@ -80,14 +80,14 @@ class salaForm extends Component{
                 <h3 style={{textAlign: "center"}}> Ingreso de sala</h3>
                 <Form style={form} onSubmit={this.SubmitHandler}>
                 
-                <Form.Group controlId="Estado" >
+                <Form.Group controlId="Nombre" >
                     <Form.Label>Nombre de la sala:</Form.Label>
-                    <Form.Control type="text" onChange={this.EstadoChangeHandler} />
+                    <Form.Control type="text" onChange={this.NombreChangeHandler} />
                 </Form.Group>
 
                 <Form.Group controlId="FormCapacidad" >
                     <Form.Label>Capacidad de la sala:</Form.Label>
-                    <Form.Control type="text"  onChange={this.SalaChangeHandler} />
+                    <Form.Control type="text"  onChange={this.CapacidadChangeHandler} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
