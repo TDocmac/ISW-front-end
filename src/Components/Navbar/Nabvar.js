@@ -19,6 +19,8 @@ function MyNavbar(){
                 </LinkContainer>
                 <LinkContainer to='/personal'><Nav.Link >Ver Personal</Nav.Link> 
                 </LinkContainer>
+                <LinkContainer to='/deleteP'><Nav.Link >Borra Personal</Nav.Link> 
+                </LinkContainer>
                 <LinkContainer to='/admissionS'><Nav.Link >Ingresar sillon</Nav.Link> 
                 </LinkContainer>
                 <LinkContainer to='/sillones'><Nav.Link >Ver sillones</Nav.Link> 
