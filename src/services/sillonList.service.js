@@ -1,9 +1,9 @@
 import {api} from '../helpers/api'
 
-const basePath= 'v1';
+const basePath= 'api';
 
 function getAll (){
-    return api.get(`${basePath}/sillons`)
+    return api.get(`${basePath}/sillones`)
 };
 function show (sillonId){
     return api.get(`${basePath}/id=${sillonId}`)
