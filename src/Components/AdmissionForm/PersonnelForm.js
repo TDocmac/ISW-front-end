@@ -45,6 +45,7 @@ class PersonnelForm extends Component{
                 cargo: this.state.personnelCargo
             }
             console.log(data)
+            alert("Personal ingresado");
             personnelService.create(data)
             .then((response)=>console.log(response.data))
             .catch(error=> console.log(error));
