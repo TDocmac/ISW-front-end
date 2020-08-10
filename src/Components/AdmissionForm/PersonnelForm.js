@@ -26,7 +26,8 @@ class PersonnelForm extends Component{
         console.log(this.state);
         //simple validation
         if(this.state.personnelName!=='' && this.state.personnelRut !=='' && this.state.personnelAge!==null
-            && this.state.personnelBirth!=='' && this.state.personnelAddress !=='' && this.state.personnelNumber !=='' && this.state.personnelEspecialidad!=='' ){
+            && this.state.personnelBirth!=='' && this.state.personnelAddress !=='' && this.state.personnelNumber !=='' && this.state.personnelEspecialidad!=='' 
+            && this.state.personnelShifts!=='' && this.state.personnelPassword!==null && this.state.personnelCargo!==''){
             // alert('axios thing');
             let date= new Date().toUTCString();
             
@@ -34,13 +35,13 @@ class PersonnelForm extends Component{
                 nombre: this.state.personnelName,
                 rut: this.state.personnelRut,
                 edad:this.state.personnelAge,
-                fechaNacimiento: this.state.personnelBirth,
+                fechaDeNacimiento: this.state.personnelBirth,
                 direccion: this.state.personnelAddress,
                 telefono: this.state.personnelNumber,
                 //fechaCreacion: date,
                 especialidad: this.state.personnelEspecialidad,
                 turnos: this.state.personnelShifts,
-                password: this.state.personnelPassword,
+                pass: this.state.personnelPassword,
                 cargo: this.state.personnelCargo
             }
             console.log(data)
@@ -168,6 +169,12 @@ class PersonnelForm extends Component{
                     <Form.Label>Direccion del personal:</Form.Label>
                     <Form.Control type="text"  onChange={this.AddressChangeHandler} />
                 </Form.Group>
+            
+                <Form.Group controlId="FormNumber" >
+                    <Form.Label>Numero de telefono del personal:</Form.Label>
+                    <Form.Control type="text"  onChange={this.NumberChangeHandler} />
+                </Form.Group>
+            
 
                 <Form.Group controlId="FormEspecialidad" >
                     <Form.Label>Especialidad del personal:</Form.Label>
