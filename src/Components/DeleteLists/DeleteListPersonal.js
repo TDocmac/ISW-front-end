@@ -65,6 +65,14 @@ class DeleteListPersonal extends Component{
             console.log(error);
           });
           personnelService.getAll()
+          .then((response)=>{
+            // console.log('RESPUESTA GET ALL PACIENTES:');
+            console.log(response.data);
+            this.setState({
+                ...this.state,
+                personnels:response.data
+            })
+        })
           .catch(function (error) {
             console.log(error);
           });
@@ -104,7 +112,7 @@ class DeleteListPersonal extends Component{
             return(
             <ListGroup.Item className='border' key={personnel.id}>
             <p><strong>Personal: </strong>{personnel.nombre} </p>
-            <p><strong>Edad: </strong>{edad}</p>
+            <p><strong>Edad: </strong>{personnel.edad}</p>
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
             <Button className= "btn btn-danger btn-sm m-2"
             onClick={()=>{
