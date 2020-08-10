@@ -30,6 +30,7 @@ class salaForm extends Component{
             salaService.create(data)
             .then((response)=>console.log(response.data))
             .catch(error=> console.log(error));
+            alert("Sala ingresada");
         }
         else alert('rellene todos los campos');
     };
