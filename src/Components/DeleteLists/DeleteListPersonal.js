@@ -20,7 +20,8 @@ class DeleteListPersonal extends Component{
     constructor(props){
         super(props)
         this.state={
-            personnels:[]
+            personnels:[],
+            checked:[]
         }
     }
     componentDidMount(){
@@ -53,6 +54,10 @@ class DeleteListPersonal extends Component{
           });
         alert('refreshing list')
     };
+
+    deleteByID=(ID)=>{
+        personnelService.remove(ID);
+    }
 
     render(){
         //sytles
@@ -89,9 +94,12 @@ class DeleteListPersonal extends Component{
             <p><strong>Personal: </strong>{personnel.nombre} </p>
             <p><strong>Edad: </strong>{edad}</p>
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
+            <Button className= "btn btn-danger btn-sm m-2"
+            onClick={()=>{
+                this.deleteByID(personnel.id)
+            }}
+            >Eliminar</Button>
             </ListGroup.Item>
-
-            
             )
             });
         }
@@ -104,6 +112,7 @@ class DeleteListPersonal extends Component{
                 <ListGroup style={listGroup} className='border' >
                 {personnelList}
                 </ListGroup>
+                
             </div>
         )
     }
