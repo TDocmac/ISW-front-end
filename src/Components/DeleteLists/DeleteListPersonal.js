@@ -16,7 +16,7 @@ function getAge(dateString)
     }
     return age;
 }
-class DeleteListPersonal extends component{
+class DeleteListPersonal extends Component{
     constructor(props){
         super(props)
         this.state={
