@@ -6,14 +6,14 @@ function getAll (){
     return api.get(`${basePath}`)
 };
 function show (personalId){
-    return api.get(`${basePath}/id=${personalId}`)
+    return api.get(`${basePath}/${personalId}`)
 };
 function create (data){
     return api.post(`${basePath}`,data)
 };
 function remove (personalId){
     console.log(personalId);
-    return api.delete(`${basePath}/id=${personalId}`)
+    return api.delete(`${basePath}/${personalId}`)
 }
 
 export const personnelService ={
