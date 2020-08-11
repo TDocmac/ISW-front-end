@@ -189,7 +189,7 @@ class PersonnelForm extends Component{
 
                 <Form.Group controlId="FormPassword" >
                     <Form.Label>Password del personal:</Form.Label>
-                    <Form.Control type="text"  onChange={this.PasswordChangeHandler} />
+                    <Form.Control type="password"  onChange={this.PasswordChangeHandler} />
                 </Form.Group>
 
                 <Form.Group controlId="FormCargo" >
