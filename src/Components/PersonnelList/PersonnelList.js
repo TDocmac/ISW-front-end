@@ -58,7 +58,7 @@ class personnelList extends Component{
         personnelService.remove(ID)
         .then((response)=>{
             //console.log(ID);
-            //console.log(response);
+            console.log(response);
         })
         .catch(function (error) {
             console.log(error);
