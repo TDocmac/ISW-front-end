@@ -45,7 +45,7 @@ function App() {
         <Route
         exact
         path='/sillones/edit/:id'
-        component={SillonEditView}/>
+        render={props => <SillonEditView />}/>
         <Route
         exact
         path='/admissionSala'
