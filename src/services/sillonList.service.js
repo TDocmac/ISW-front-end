@@ -5,7 +5,7 @@ function getAll (){
     return api.get(`${basePath}/sillones`)
 };
 function show (sillonId){
-    return api.get(`${basePath}/id=${sillonId}`)
+    return api.get(`${basePath}/sillones/${sillonId}`)
 };
 function create (data){
     return api.post(`${basePath}/sillones`,data)

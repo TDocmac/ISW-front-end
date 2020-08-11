@@ -89,8 +89,7 @@ class sillonesList extends Component{
             <p><strong>Paciente: </strong>{sillon.paciente}</p>
             <Button className= "btn btn-primary btn-sm"
             onClick={()=>{
-                
-                window.location.reload(true);
+                <Link to={`/sillones/edit/${sillon.id}`}></Link>
             }}
             >Modificar</Button>
             <Button className= "btn btn-danger btn-sm m-2"

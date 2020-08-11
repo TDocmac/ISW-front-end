@@ -11,6 +11,7 @@ import PersonnelListView from './Views/PersonnelListView'
 
 import SillonAdmission from './Views/SillonAdmission'
 import SillonesListView from './Views/SillonesListView';
+import SillonEditView from './Views/SillonEditView';
 
 import SalaAdmission from './Views/SalaAdmission'
 import SalasListView from './Views/SalasListView';
@@ -41,6 +42,10 @@ function App() {
         exact
         path='/sillones'
         component={SillonesListView}/>
+        <Route
+        exact
+        path='/sillones/edit/:id'
+        component={SillonEditView}/>
         <Route
         exact
         path='/admissionSala'
