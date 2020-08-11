@@ -10,9 +10,13 @@ function show (sillonId){
 function create (data){
     return api.post(`${basePath}/sillones`,data)
 };
+function remove (sillonId){
+    return api.delete(`${basePath}/sillones/${sillonId}`)
+}
 
 export const sillonService ={
     getAll,
     show,
-    create
+    create,
+    remove
 };

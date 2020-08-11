@@ -11,9 +11,13 @@ function show (salaId){
 function create (data){
     return api.post(`${basePath}/salas`,data)
 };
+function remove (salaId){
+    return api.delete(`${basePath}/salas/${salaId}`)
+}
 
 export const salaService ={
     getAll,
     show,
-    create
+    create,
+    remove
 };

@@ -40,6 +40,18 @@ class salasList extends Component{
         alert('refreshing list')
     };
 
+    deleteByID=(ID)=>{
+        salaService.remove(ID)
+        .then((response)=>{
+            //console.log(ID);
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        alert('Sala eliminada')
+    }
+
     render(){
         //sytles
         const div={
@@ -72,6 +84,12 @@ class salasList extends Component{
             <ListGroup.Item className='border' key={sala.id}>
             <p><strong>Nombre: </strong>{sala.nombre} </p>
             <p><strong>Capacidad: </strong>{sala.capacidad}</p>
+            <Button className= "btn btn-danger btn-sm m-2"
+            onClick={()=>{
+                this.deleteByID(sala.id);
+                window.location.reload(true);
+            }}
+            >Eliminar</Button>
             </ListGroup.Item>
             )
             });

@@ -40,6 +40,18 @@ class sillonesList extends Component{
         alert('refreshing list')
     };
 
+    deleteByID=(ID)=>{
+        sillonService.remove(ID)
+        .then((response)=>{
+            //console.log(ID);
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        alert('Sillon eliminado')
+    }
+
     render(){
         //sytles
         const div={
@@ -73,6 +85,12 @@ class sillonesList extends Component{
             <p><strong>Estado: </strong>{sillon.estado} </p>
             <p><strong>Sala: </strong>{sillon.sala}</p>
             <p><strong>Paciente: </strong>{sillon.paciente}</p>
+            <Button className= "btn btn-danger btn-sm m-2"
+            onClick={()=>{
+                this.deleteByID(sillon.id);
+                window.location.reload(true);
+            }}
+            >Eliminar</Button>
             </ListGroup.Item>
             )
             });
