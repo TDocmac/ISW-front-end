@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {sillonService} from '../../services'
 import {Form,Button,FormCheck,} from 'react-bootstrap'
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link,withRouter} from 'react-router-dom';
 
 class EditSillon extends Component{
 
@@ -17,8 +17,8 @@ class EditSillon extends Component{
 
     };
 
-    componentWillMount(){
-        let id= this.props.match.params.id;
+    componentDidMount(props){
+        let id= props.match.params.id;
         this.getSillon(id);
     }
 
@@ -117,4 +117,4 @@ class EditSillon extends Component{
     }
 }
 
-export default EditSillon;
+export default withRouter{EditSillon};
