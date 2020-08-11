@@ -15,7 +15,7 @@ class PersonnelForm extends Component{
             personnelNumber:'',
             personnelEspecialidad:'',
             personnelShifts:'',
-            personnelPassword: null,
+            personnelPassword: '',
             personnelCargo: ''
         }
 
@@ -27,7 +27,7 @@ class PersonnelForm extends Component{
         //simple validation
         if(this.state.personnelName!=='' && this.state.personnelRut !==''
             && this.state.personnelBirth!=='' && this.state.personnelAddress !=='' && this.state.personnelNumber !=='' && this.state.personnelEspecialidad!=='' 
-            && this.state.personnelShifts!=='' && this.state.personnelPassword!==null && this.state.personnelCargo!==''){
+            && this.state.personnelShifts!=='' && this.state.personnelPassword!=='' && this.state.personnelCargo!==''){
             // alert('axios thing');
             let date= new Date().toUTCString();
             
