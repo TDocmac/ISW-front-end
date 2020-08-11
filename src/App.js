@@ -14,7 +14,7 @@ import SillonesListView from './Views/SillonesListView';
 
 import SalaAdmission from './Views/SalaAdmission'
 import SalasListView from './Views/SalasListView';
-import EditSillones from './Components/Edit/EditSillones';
+
 
 function App() {
   return (
