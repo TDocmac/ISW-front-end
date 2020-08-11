@@ -117,4 +117,4 @@ class EditSillon extends Component{
     }
 }
 
-export default withRouter{EditSillon};
+export default EditSillon;
