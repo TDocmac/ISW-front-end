@@ -9,7 +9,7 @@ class EditSillon extends Component{
     constructor(props){
         super(props);
         this.state= {
-            sillonID: props.match.params.id,
+            sillonID: null,
             sillonEstado:'',
             sillonSala:'',
             sillonPaciente: null
@@ -21,8 +21,8 @@ class EditSillon extends Component{
         this.getSillon();
     }
 
-    getSillon(id){
-        sillonService.show(this.sillonID)
+    getSillon(){
+        sillonService.show(this.props.match.params.id)
         .then(response =>{
             this.setState({
                 sillonEstado: response.data.estado,
