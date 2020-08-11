@@ -54,6 +54,18 @@ class personnelList extends Component{
         alert('refreshing list')
     };
 
+    deleteByID=(ID)=>{
+        personnelService.remove(ID)
+        .then((response)=>{
+            //console.log(ID);
+            //console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        alert('Personal eliminado')
+    }
+
     render(){
         //sytles
         const div={
@@ -89,6 +101,12 @@ class personnelList extends Component{
             <p><strong>Personal: </strong>{personnel.nombre} </p>
             <p><strong>Edad: </strong>{personnel.edad}</p>
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
+            <Button className= "btn btn-danger btn-sm m-2"
+            onClick={()=>{
+                this.deleteByID(personnel.id);
+                window.location.reload(true);
+            }}
+            >Eliminar</Button>
             </ListGroup.Item>
             )
             });

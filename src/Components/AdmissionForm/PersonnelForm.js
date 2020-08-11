@@ -25,7 +25,7 @@ class PersonnelForm extends Component{
         event.preventDefault()
         console.log(this.state);
         //simple validation
-        if(this.state.personnelName!=='' && this.state.personnelRut !=='' && this.state.personnelAge!==null
+        if(this.state.personnelName!=='' && this.state.personnelRut !==''
             && this.state.personnelBirth!=='' && this.state.personnelAddress !=='' && this.state.personnelNumber !=='' && this.state.personnelEspecialidad!=='' 
             && this.state.personnelShifts!=='' && this.state.personnelPassword!==null && this.state.personnelCargo!==''){
             // alert('axios thing');
@@ -62,12 +62,6 @@ class PersonnelForm extends Component{
     RutChangeHandler = (event)=>{
         event.preventDefault();
         this.setState({...this.state, personnelRut: event.target.value});
-        //console.log(this.state);
-    };
-    
-    AgeChangeHandler = (event)=>{
-        event.preventDefault();
-        this.setState({...this.state, personnelAge: event.target.value});
         //console.log(this.state);
     };
 
@@ -154,11 +148,6 @@ class PersonnelForm extends Component{
                 <Form.Group controlId="FormRut" >
                     <Form.Label>Rut del personal:</Form.Label>
                     <Form.Control type="text"  onChange={this.RutChangeHandler} />
-                </Form.Group>
-
-                <Form.Group controlId="FormAge" >
-                    <Form.Label>Edad del personal:</Form.Label>
-                    <Form.Control type= 'text'  onChange={this.AgeChangeHandler} />
                 </Form.Group>
 
                 <Form.Group controlId="FormBirth" >
