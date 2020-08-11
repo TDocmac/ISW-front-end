@@ -86,9 +86,12 @@ class sillonesList extends Component{
             <p><strong>Estado: </strong>{sillon.estado} </p>
             <p><strong>Sala: </strong>{sillon.sala}</p>
             <p><strong>Paciente: </strong>{sillon.paciente}</p>
-            <Link to={'sillonEdit/${sillon.id}'}>
             <Button className= "btn btn-primary btn-sm"
-            >Modificar</Button></Link>
+            onClick={()=>{
+                
+                window.location.reload(true);
+            }}
+            >Modificar</Button>
             <Button className= "btn btn-danger btn-sm m-2"
             onClick={()=>{
                 this.deleteByID(sillon.id);

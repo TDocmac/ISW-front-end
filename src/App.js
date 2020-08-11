@@ -39,10 +39,6 @@ function App() {
         component={SillonAdmission}/>
         <Route
         exact
-        path='/sillonEdit/:id' render={props =><EditSillones/>}
-        />
-        <Route
-        exact
         path='/sillones'
         component={SillonesListView}/>
         <Route
