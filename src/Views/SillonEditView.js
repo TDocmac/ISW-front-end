@@ -3,7 +3,7 @@ import { Container,Row,Col } from 'react-bootstrap'
 import EditSillon from '../Components/Edit/EditSillon';
 
 
-function Page1(){
+function SillonEditView(){
    
     return (
         <Container fluid="md" >
@@ -14,4 +14,4 @@ function Page1(){
     );
 }
 
-export default Page1;
+export default SillonEditView;

@@ -11,10 +11,12 @@ import PersonnelListView from './Views/PersonnelListView'
 
 import SillonAdmission from './Views/SillonAdmission'
 import SillonesListView from './Views/SillonesListView';
-import SillonEditView from './Views/SillonEditView';
+//import SillonEditView from './Views/SillonEditView';
+import EditSillon from './Components/Edit/EditSillon';
 
 import SalaAdmission from './Views/SalaAdmission'
 import SalasListView from './Views/SalasListView';
+import EditSala from './Components/Edit/EditSala';
 
 
 function App() {
@@ -45,7 +47,7 @@ function App() {
         <Route
         exact
         path='/sillones/edit/:id'
-        render={props => <SillonEditView />}/>
+        component= {EditSillon}/>
         <Route
         exact
         path='/admissionSala'
@@ -54,6 +56,10 @@ function App() {
         exact
         path='/salas'
         component={SalasListView}/>
+        <Route
+        exact
+        path='/salas/edit/:id'
+        component={EditSala}/>
       </Router>
       
       <Footer></Footer>

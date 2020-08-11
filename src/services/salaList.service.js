@@ -6,11 +6,14 @@ function getAll (){
     return api.get(`${basePath}/salas`)
 };
 function show (salaId){
-    return api.get(`${basePath}/id=${salaId}`)
+    return api.get(`${basePath}/${salaId}`)
 };
 function create (data){
     return api.post(`${basePath}/salas`,data)
 };
+function update (salaId,data){
+    return api.post(`${basePath}/salas/${salaId}`, data)
+}
 function remove (salaId){
     return api.delete(`${basePath}/salas/${salaId}`)
 }
@@ -19,5 +22,6 @@ export const salaService ={
     getAll,
     show,
     create,
-    remove
+    remove,
+    update
 };
