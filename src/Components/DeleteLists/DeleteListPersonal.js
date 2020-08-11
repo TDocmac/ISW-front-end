@@ -64,8 +64,8 @@ class DeleteListPersonal extends Component{
         .catch(function (error) {
             console.log(error);
         });
-        window.location.reload(true);
         alert('Personal eliminado')
+        window.location.reload(true);
     }
 
     render(){
