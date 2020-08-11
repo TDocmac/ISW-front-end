@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {ListGroup, Button} from 'react-bootstrap'
 import {sillonService} from '../../services'
+import { Link } from 'react-router-dom'
 
 class sillonesList extends Component{
     constructor(props){
@@ -85,6 +86,9 @@ class sillonesList extends Component{
             <p><strong>Estado: </strong>{sillon.estado} </p>
             <p><strong>Sala: </strong>{sillon.sala}</p>
             <p><strong>Paciente: </strong>{sillon.paciente}</p>
+            <Link to={'sillonEdit/${sillon.id}'}>
+            <Button className= "btn btn-primary btn-sm"
+            >Modificar</Button></Link>
             <Button className= "btn btn-danger btn-sm m-2"
             onClick={()=>{
                 this.deleteByID(sillon.id);

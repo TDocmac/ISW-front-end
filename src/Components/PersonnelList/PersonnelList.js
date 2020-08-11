@@ -66,6 +66,8 @@ class personnelList extends Component{
         alert('Personal eliminado')
     }
 
+
+
     render(){
         //sytles
         const div={
