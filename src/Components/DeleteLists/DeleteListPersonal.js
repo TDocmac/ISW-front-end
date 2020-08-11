@@ -65,7 +65,6 @@ class DeleteListPersonal extends Component{
             console.log(error);
         });
         alert('Personal eliminado')
-        window.location.reload(true);
     }
 
     render(){
@@ -105,7 +104,8 @@ class DeleteListPersonal extends Component{
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
             <Button className= "btn btn-danger btn-sm m-2"
             onClick={()=>{
-                this.deleteByID(personnel.id)
+                this.deleteByID(personnel.id);
+                window.location.reload(true);
             }}
             >Eliminar</Button>
             </ListGroup.Item>
