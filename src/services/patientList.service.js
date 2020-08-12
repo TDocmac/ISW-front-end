@@ -6,7 +6,7 @@ function getAll (){
     return api.get(`${basePath}/pacientes`)
 };
 function show (pacienteId){
-    return api.get(`${basePath}/id=${pacienteId}`)
+    return api.get(`${basePath}/paciente/id?id=${pacienteId}`)
 };
 function create (data){
     return api.post(`${basePath}/paciente`,data)

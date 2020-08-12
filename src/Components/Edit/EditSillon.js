@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {sillonService} from '../../services'
 import {Form,Button} from 'react-bootstrap'
 import {Link } from 'react-router-dom';
+import {patientService} from '../../services';
 
 class EditSillon extends Component{
 
@@ -11,7 +12,8 @@ class EditSillon extends Component{
             sillonID: null,
             sillonEstado:'',
             sillonSala:'',
-            sillonPaciente: null
+            sillonPaciente: null,
+            pacientes: []
         }
 
     };
@@ -30,30 +32,44 @@ class EditSillon extends Component{
                 sillonPaciente: response.data.paciente,
                 sillonID: response.data.id
             })
-        })
+        });
+        patientService.getAll()
+            .then(response =>{
+                this.setState({
+                    pacientes: response.data
+                })
+            })
     }
 
     SubmitHandler = (event)=>{
         event.preventDefault()
-        console.log(this.state);
+        //console.log(this.state);
         //simple validation
+        let i;
+        let encontrado = 0;
+        for (i of this.state.pacientes){
+            if (this.state.sillonPaciente == i.id) encontrado = 1
+        }
+
         if(this.state.sillonEstado!=='' && this.state.sillonSala !=='' && this.state.sillonPaciente!==null ){
             // alert('axios thing');
-            let date= new Date().toUTCString();
-            
-            let data = {
-                id:this.state.sillonID,
-                estado: this.state.sillonEstado,
-                sala: this.state.sillonSala,
-                paciente:this.state.sillonPaciente,
-                //fechaCreacion: date,
+            if ( encontrado !== 0){
+                let date= new Date().toUTCString();
+
+                let data = {
+                    id:this.state.sillonID,
+                    estado: this.state.sillonEstado,
+                    sala: this.state.sillonSala,
+                    paciente:this.state.sillonPaciente,
+                    //fechaCreacion: date,
+                }
+
+                sillonService.update(data.id,data)
+                .then((response)=>console.log(response.data))
+                .catch(error=> console.log(error));
+                alert("Sillón actualizado");
             }
-            console.log(data)
-            
-            sillonService.update(data.id,data)
-            .then((response)=>console.log(response.data))
-            .catch(error=> console.log(error));
-            alert("Sillón actualizado");
+            else alert('Paciente no registrado');
         }
         else alert('rellene todos los campos');
     };
