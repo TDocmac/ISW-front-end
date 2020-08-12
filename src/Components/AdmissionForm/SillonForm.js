@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Form,Button,FormCheck,} from 'react-bootstrap'
 import {sillonService} from '../../services'
 
+
 class SillonForm extends Component{
 
     constructor(props){
@@ -87,10 +88,13 @@ class SillonForm extends Component{
                 <p>{today}</p>
                 <h3 style={{textAlign: "center"}}> Ingreso de sillon</h3>
                 <Form style={form} onSubmit={this.SubmitHandler}>
-                
-                <Form.Group controlId="Estado" >
+                                
+                <Form.Group controlId="selectEstado">
                     <Form.Label>Estado del sillon:</Form.Label>
-                    <Form.Control type="text" onChange={this.EstadoChangeHandler} />
+                        <Form.Control as="select" onChange={this.EstadoChangeHandler}>
+                            <option>Disponible</option>
+                            <option>Ocupado</option>
+                        </Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="FormSala" >

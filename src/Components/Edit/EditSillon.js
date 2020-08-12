@@ -53,7 +53,7 @@ class EditSillon extends Component{
 
         if(this.state.sillonEstado!=='' && this.state.sillonSala !=='' && this.state.sillonPaciente!==null ){
             // alert('axios thing');
-            if ( encontrado !== 0){
+            if ( (encontrado !== 0 && this.state.sillonEstado==='Ocupado')||(this.state.sillonEstado==='Disponible'&&this.state.sillonPaciente==='')){
                 let date= new Date().toUTCString();
 
                 let data = {
@@ -68,6 +68,9 @@ class EditSillon extends Component{
                 .then((response)=>console.log(response.data))
                 .catch(error=> console.log(error));
                 alert("Sillón actualizado");
+            }
+            else if(encontrado !== 0 && this.state.sillonEstado==='Disponible'){
+                alert('Sillón no puede estar disponible y con paciente')
             }
             else alert('Paciente no registrado');
         }
@@ -110,9 +113,12 @@ class EditSillon extends Component{
                 <h3 style={{textAlign: "center"}}> Modificar sillón</h3>
                 <Form style={form} onSubmit={this.SubmitHandler}>
                 
-                <Form.Group controlId="Estado" >
+                <Form.Group controlId="selectEstado">
                     <Form.Label>Estado del sillon:</Form.Label>
-                    <Form.Control  type="text" value={this.state.sillonEstado} onChange={this.EstadoChangeHandler} />
+                        <Form.Control as="select" value={this.state.sillonEstado} onChange={this.EstadoChangeHandler}>
+                            <option>Disponible</option>
+                            <option>Ocupado</option>
+                        </Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="FormSala" >
