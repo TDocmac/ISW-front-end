@@ -3,6 +3,7 @@ import {ListGroup, Button} from 'react-bootstrap'
 import { faMale,faFemale,faRedo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {personnelService} from '../../services'
+import Link from 'react-router-dom'
 
 function getAge(dateString) 
 {
@@ -101,13 +102,14 @@ class personnelList extends Component{
             return(
             <ListGroup.Item className='border' key={personnel.id}>
             <p><strong>Personal: </strong>{personnel.nombre} </p>
-            <p><strong>RUT: </strong>{personnel.RUT}</p>
+            <p><strong>RUT: </strong>{personnel.rut}</p>
             <p><strong>Fecha de Nacimiento: </strong>{personnel.fechaDeNacimiento}</p>
             <p><strong>Dirección: </strong>{personnel.direccion}</p>
             <p><strong>Telefono: </strong>{personnel.telefono}</p>
             <p><strong>Especialidad: </strong>{personnel.especialidad}</p>
             <p><strong>Turnos: </strong>{personnel.turnos}</p>
             <p><strong>Cargo: </strong>{personnel.cargo}</p>
+            <Link className="btn btn-primary btn-sm" to={`/personal/edit/${personnel.id}`}>Modificar</Link>
             <Button className= "btn btn-danger btn-sm m-2"
             onClick={()=>{
                 this.deleteByID(personnel.id);

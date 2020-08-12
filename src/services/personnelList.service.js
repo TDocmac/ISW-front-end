@@ -11,6 +11,9 @@ function show (personalId){
 function create (data){
     return api.post(`${basePath}`,data)
 };
+function update (id,data){
+    return api.post(`${basePath}/${id}`,data)
+};
 function remove (personalId){
     return api.delete(`${basePath}/${personalId}`)
 }
@@ -19,5 +22,6 @@ export const personnelService ={
     getAll,
     show,
     create,
-    remove
+    remove,
+    update
 };
