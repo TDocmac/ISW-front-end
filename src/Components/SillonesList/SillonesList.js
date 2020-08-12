@@ -93,7 +93,7 @@ class sillonesList extends Component{
             <Button className= "btn btn-danger btn-sm m-2"
             onClick={()=>{
                 this.deleteByID(sillon.id);
-                //window.location.reload(true);
+                window.location.reload(true);
             }}
             >Eliminar</Button>
             </ListGroup.Item>
