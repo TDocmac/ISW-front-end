@@ -46,6 +46,7 @@ class EditSala extends Component{
                 //fechaCreacion: date,
             }
             console.log(data)
+            console.log(data.id)
             
             salaService.update(data.id,data)
             .then((response)=>console.log(response.data))

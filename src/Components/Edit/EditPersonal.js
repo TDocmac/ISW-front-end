@@ -57,6 +57,7 @@ class EditPersonal extends Component{
             // alert('axios thing');
             
             let data = {
+                id:this.state.personnelID,
                 nombre: this.state.personnelName,
                 rut: this.state.personnelRut,
                 edad:this.state.personnelAge,
@@ -70,6 +71,7 @@ class EditPersonal extends Component{
                 cargo: this.state.personnelCargo
             }
             console.log(data)
+            console.log(data.id)
             personnelService.update(data.id,data)
             .then((response)=>console.log(response.data))
             .catch(error=> console.log(error));
