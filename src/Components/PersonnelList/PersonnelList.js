@@ -3,7 +3,7 @@ import {ListGroup, Button} from 'react-bootstrap'
 import { faMale,faFemale,faRedo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {personnelService} from '../../services'
-import Link from 'react-router-dom'
+import {Link } from 'react-router-dom';
 
 function getAge(dateString) 
 {
