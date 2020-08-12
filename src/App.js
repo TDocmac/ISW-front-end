@@ -8,7 +8,7 @@ import './App.css';
 //import Admission from './Views/Admission'
 import PersonnelAdmission from './Views/PersonnelAdmission'
 import PersonnelListView from './Views/PersonnelListView'
-import EditPersonal from './Edit/EditPersonal'
+import EditPersonal from './Components/Edit/EditPersonal'
 
 import SillonAdmission from './Views/SillonAdmission'
 import SillonesListView from './Views/SillonesListView';
