@@ -1,5 +1,7 @@
 import React,{Component} from 'react'
 import {ListGroup, Button} from 'react-bootstrap'
+import { faRedo } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {salaService} from '../../services'
 import { Link } from 'react-router-dom'
 
@@ -38,7 +40,7 @@ class salasList extends Component{
         .catch(function (error) {
             console.log(error);
           });
-        alert('refreshing list')
+        alert('Actualizar lista')
     };
 
     deleteByID=(ID)=>{
@@ -99,9 +101,8 @@ class salasList extends Component{
         return(
             <div style={div}>
                 <h3 style={{textAlign: "center"}}>Salas ingresadas</h3>
-                <small>Refresh </small> 
                 <Button  className= 'btn btn-light' onClick={this.onChangeHandler} >
-                     </Button>
+                     <FontAwesomeIcon icon={faRedo} size="xs"  /></Button>
                 <ListGroup style={listGroup} className='border' >
                 {salaList}
                 </ListGroup>

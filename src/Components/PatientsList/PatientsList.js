@@ -51,7 +51,7 @@ class patientList extends Component{
         .catch(function (error) {
             console.log(error);
           });
-        alert('refreshing list')
+        alert('Actualizar lista')
     };
 
     render(){
@@ -102,7 +102,6 @@ class patientList extends Component{
         return(
             <div style={div}>
                 <h3 style={{textAlign: "center"}}>Pacientes ingresados</h3>
-                <small>Refresh </small> 
                 <Button  className= 'btn btn-light' onClick={this.onChangeHandler} >
                      <FontAwesomeIcon icon={faRedo} size="xs"  /></Button>
                 <ListGroup style={listGroup} className='border' >
