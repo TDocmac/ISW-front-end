@@ -40,7 +40,7 @@ class EditPersonal extends Component{
                 personnelAddress:response.data.direccion,
                 personnelNumber:response.data.telefono,
                 personnelEspecialidad:response.data.especialidad,
-                personnelShifts:response.data.turno,
+                personnelShifts:response.data.turnos,
                 personnelPassword: response.data.pass,
                 personnelCargo: response.data.cargo
             })
