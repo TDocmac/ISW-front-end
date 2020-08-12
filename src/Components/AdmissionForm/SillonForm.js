@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Form,Button,FormCheck,} from 'react-bootstrap'
 import {sillonService} from '../../services'
+import {patientService} from '../../services';
 
 
 class SillonForm extends Component{
@@ -8,18 +9,45 @@ class SillonForm extends Component{
     constructor(props){
         super(props);
         this.state= {
-            sillonEstado:'',
+            sillonEstado:'Disponible',
             sillonSala:'',
-            sillonPaciente: null
+            sillonPaciente: null,
+            pacientes: []
         }
 
     };
+    componentWillMount(){
+        this.getSillon();
+    }
+    getSillon(){
+        patientService.getAll()
+            .then(response =>{
+                this.setState({
+                    pacientes: response.data
+                })
+            })
+    }
 
     SubmitHandler = (event)=>{
         event.preventDefault()
         console.log(this.state);
+        let i;
+        let encontrado = 0;
+        for (i of this.state.pacientes){
+            if (this.state.sillonPaciente == i.id) encontrado = 1
+        }
+
         //simple validation
-        if(this.state.sillonEstado!=='' && this.state.sillonSala !=='' && this.state.sillonPaciente!==null ){
+        if (this.state.sillonEstado==='Disponible'&& this.state.sillonPaciente!==null){
+            alert('Sillón no puede estar disponible con paciente')
+        }
+        else if(this.state.sillonEstado==='Ocupado'&& this.state.sillonPaciente===null){
+            alert('Ingrese id de paciente')
+        }
+        else if(this.state.sillonEstado==='Ocupado'&& encontrado===0){
+            alert('Paciente no registrado')
+        }
+        else if(this.state.sillonSala !==''){
             // alert('axios thing');
             let date= new Date().toUTCString();
             
@@ -35,7 +63,7 @@ class SillonForm extends Component{
             .then((response)=>console.log(response.data))
             .catch(error=> console.log(error));
         }
-        else alert('rellene todos los campos');
+        else alert('Ingrese la sala del sillón');
     };
 
     EstadoChangeHandler = (event)=>{
@@ -91,7 +119,7 @@ class SillonForm extends Component{
                                 
                 <Form.Group controlId="selectEstado">
                     <Form.Label>Estado del sillon:</Form.Label>
-                        <Form.Control as="select" onChange={this.EstadoChangeHandler}>
+                        <Form.Control as="select" value={this.state.sillonEstado} onChange={this.EstadoChangeHandler}>
                             <option>Disponible</option>
                             <option>Ocupado</option>
                         </Form.Control>
