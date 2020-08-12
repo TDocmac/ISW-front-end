@@ -27,6 +27,8 @@ function MyNavbar(){
                 </LinkContainer>
                 <LinkContainer to='/salas'><Nav.Link >Ver salas</Nav.Link> 
                 </LinkContainer>
+                <LinkContainer to='/pacientes'><Nav.Link >Ver pacientes</Nav.Link> 
+                </LinkContainer>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

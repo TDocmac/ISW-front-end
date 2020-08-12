@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer'
 import {  BrowserRouter as Router,  Route} from 'react-router-dom';
 import './App.css';
 
-//import Admission from './Views/Admission'
+import Admission from './Views/Admission'
 import PersonnelAdmission from './Views/PersonnelAdmission'
 import PersonnelListView from './Views/PersonnelListView'
 import EditPersonal from './Components/Edit/EditPersonal'
@@ -65,6 +65,10 @@ function App() {
         exact
         path='/salas/edit/:id'
         component={EditSala}/>
+        <Route
+        exact
+        path='/pacientes'
+        component={Admission}/>
       </Router>
       
       <Footer></Footer>
