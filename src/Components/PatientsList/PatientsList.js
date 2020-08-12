@@ -92,6 +92,7 @@ class patientList extends Component{
             
             return(
             <ListGroup.Item className='border' key={patient.id}>
+            <p><strong>ID: </strong>{patient.id}</p>
             <p><strong>Paciente: </strong>{patient.nombre} <FontAwesomeIcon icon={icon} size="lg"  style={color} /></p>
             <p><strong>Edad: </strong>{edad}</p>
             <p><strong>Diagnostico: </strong>{patient.diagnostico}</p>
